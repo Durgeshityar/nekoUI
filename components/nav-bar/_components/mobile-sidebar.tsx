@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { CgChevronLeft } from 'react-icons/cg'
 import { navbarItems } from '@/components/constants'
 import { motion } from 'framer-motion'
+import GlobalLogo from '@/components/global-logo'
 
 interface MobileSidebarProps {
   handleClose: () => void
@@ -12,10 +13,10 @@ interface MobileSidebarProps {
 
 const MobileSidebar = ({ handleClose, isOpen }: MobileSidebarProps) => {
   return (
-    <div className="min-h-screen w-screen fixed top-0 left-0 flex z-[9999]">
+    <div className="min-h-screen w-screen fixed top-0 left-0 flex z-[9999] text-foreground">
       {/* Sidebar */}
       <motion.div
-        className="w-3/4 h-screen bg-white shadow-md p-3 flex flex-col fixed top-0 left-0"
+        className="w-3/4 md:w-2/4 h-screen bg-white min-w-64  dark:bg-neutral-950 dark:border-r dark:border-slate-800 shadow-md p-3 flex flex-col fixed top-0 left-0"
         initial={{ x: '-100%' }}
         animate={{ x: isOpen ? '0%' : '-100%' }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -34,7 +35,7 @@ const MobileSidebar = ({ handleClose, isOpen }: MobileSidebarProps) => {
       {/* Overlay */}
       <motion.div
         onClick={handleClose}
-        className={`w-1/4 h-screen bg-black fixed top-0 right-0 ${
+        className={`w-1/4 md:w-2/4 h-screen bg-black fixed top-0 right-0 ${
           isOpen ? 'opacity-70' : 'opacity-0'
         } transition-opacity duration-300`}
         initial={{ opacity: 0 }}
@@ -50,7 +51,7 @@ const MobileSidebarLogo = () => {
   return (
     <Link href={'/'} className="h-full w-full">
       <span className="flex items-center space-x-2">
-        <Image src={'./logo.svg'} alt="logo" width={40} height={40} />
+        <GlobalLogo />
         <p className="font-extrabold text-lg "> Neko UI</p>
       </span>
     </Link>

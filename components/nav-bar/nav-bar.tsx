@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Searchbar from './_components/search-bar'
 import SocialHandle from './_components/social-credentials'
-import Theme from './_components/theme'
+import Theme from './_components/theme-button'
 import NavbarItems from './_components/nabarItems'
 import Logo from './_components/logo'
 
@@ -21,7 +21,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="h-12 w-full flex items-center p-2  justify-between m-2 px-4">
+    <div className="h-12  w-auto md:w-full flex items-center md:p-2  justify-between m-2  md:px-4">
       <div className="flex items-center gap-x-3">
         <Logo />
         <NavbarItems />

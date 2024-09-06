@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { RxHamburgerMenu } from 'react-icons/rx'
 
 import MobileSidebar from './mobile-sidebar'
+import GlobalLogo from '@/components/global-logo'
 
 const Logo = () => {
   const [sidebar, openSidebar] = useState(false)
@@ -21,7 +22,9 @@ const Logo = () => {
       ) : null}
       <Link href={'/'} className="h-full w-full hidden md:block">
         <span className="flex items-center space-x-2">
-          <Image src={'./logo.svg'} alt="logo" width={40} height={40} />
+          <div className="text-black dark:text-white">
+            <GlobalLogo />
+          </div>
           <p className="font-extrabold text-lg hidden lg:block"> Neko UI</p>
         </span>
       </Link>
